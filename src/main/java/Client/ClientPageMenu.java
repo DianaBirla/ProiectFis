@@ -13,7 +13,7 @@ public void  BorrowList(String username) throws NoBooksAdded {
 	li.setVisible(true);
 }
 public void feedback(String username) {
-	Feedback feedback=new Feedback();
+	Feedback feedback=new Feedback(username);
 	feedback.setVisible(true);
 }
 
