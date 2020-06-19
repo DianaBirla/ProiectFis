@@ -7,8 +7,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class WriteUsernamesPasswords {
+	private JSONArray user_pass= new JSONArray();
 	public void WriteUsernamePass() {
-	JSONArray user_pass= new JSONArray();
+	
 	JSONObject obj1= new JSONObject();
 	JSONObject obj2= new JSONObject();
 	JSONObject obj3= new JSONObject();
@@ -37,4 +38,8 @@ public class WriteUsernamesPasswords {
 		e.printStackTrace();
 	}
 }
+	public JSONArray getListUser()
+	{
+		return user_pass;
+	}
 }
