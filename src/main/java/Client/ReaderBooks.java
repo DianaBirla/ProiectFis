@@ -13,10 +13,10 @@ import org.json.simple.parser.ParseException;
 public class ReaderBooks
 {
 	private JSONArray jsonArray;
-	public void read_books()
+	public void read_books(String res)
 	{
 		JSONParser parser = new JSONParser();
-		try (Reader reader = new FileReader("src/main/resources/Books.json")) 
+		try (Reader reader = new FileReader(res)) 
 		{
 			jsonArray = (JSONArray) parser.parse(reader);
 			} catch (IOException e) 
