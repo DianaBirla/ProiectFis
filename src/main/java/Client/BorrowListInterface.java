@@ -84,7 +84,7 @@ public class BorrowListInterface extends JFrame {
 		 button1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent arg0) {
 					CreateBorrowList clp=new CreateBorrowList ();
-					clp.create(username,list);
+					clp.create(username,list,"src/main/resources/lista_imprumut.json");
 					
 				}
 			});
