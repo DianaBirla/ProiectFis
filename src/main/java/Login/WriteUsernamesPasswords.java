@@ -8,7 +8,7 @@ import org.json.simple.JSONObject;
 
 public class WriteUsernamesPasswords {
 	private JSONArray user_pass= new JSONArray();
-	public void WriteUsernamePass() {
+	public void WriteUsernamePass(String res) {
 	
 	JSONObject obj1= new JSONObject();
 	JSONObject obj2= new JSONObject();
@@ -29,7 +29,7 @@ public class WriteUsernamesPasswords {
 	obj3.put("username","admin");
 	user_pass.add(obj3);
 	
-	try(FileWriter file =new FileWriter("src/main/resources/Usernames_passwords.json"))
+	try(FileWriter file =new FileWriter(res))
 	{
 		file.write(user_pass.toString());
 	}
