@@ -10,7 +10,7 @@ import org.json.simple.JSONObject;
 
 public class CreateBorrowList {
 	JSONArray list_imprumut= new JSONArray();
-	public void create(String username,List<BookModel> list) {
+	public void create(String username,List<BookModel> list, String res) {
 		int aux=0;
 		for(BookModel e:list) {
 			JSONObject obj1= new JSONObject();
@@ -19,7 +19,7 @@ public class CreateBorrowList {
 			list_imprumut.add(obj1);
 				
 		}
-		try(FileWriter file =new FileWriter("src/main/resources/lista_imprumut.json"))
+		try(FileWriter file =new FileWriter(res))
 		{
 			file.write(list_imprumut.toString());
 			file.flush();
