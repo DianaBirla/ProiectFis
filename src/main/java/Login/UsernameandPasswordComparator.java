@@ -16,7 +16,7 @@ public class UsernameandPasswordComparator  {
 	public void handle_login(String name, String password) throws WrongPassword,WrongUsername,WrongUsernameandPassword {
 		boolean flag_username=false;
 		boolean flag_password=false;
-		unames_pass.readusernamespasswords();
+		unames_pass.readusernamespasswords("src/main/resources/Usernames_passwords.json");
 		JSONArray usernames_passwords=unames_pass.getusernamespasswords();
 		Iterator<JSONObject> it = usernames_passwords.iterator();
 		while (it.hasNext()) {
@@ -39,5 +39,8 @@ public class UsernameandPasswordComparator  {
 					
 	}
 }
+
+
+
 
 
