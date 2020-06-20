@@ -9,10 +9,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 public class ReaderUsernamesPassword {
 	private JSONArray jsonArray;
-	public void readusernamespasswords() 
+	public void readusernamespasswords(String res) 
 	{
 		JSONParser parser = new JSONParser();
-		try (Reader reader = new FileReader("src/main/resources/Usernames_passwords.json")) {
+		try (Reader reader = new FileReader(res)) {
 			jsonArray = (JSONArray) parser.parse(reader);
 		}
 		catch (IOException e) {
