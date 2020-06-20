@@ -9,7 +9,7 @@ public class BooksServices {
 	private List<BookModel> carti=new ArrayList<BookModel>();
 	private ReaderBooks readerbooks=new ReaderBooks();
 	public BooksServices () {
-		readerbooks.read_books();
+		readerbooks.read_books("src/main/resources/Books.json");
 		JSONArray books=readerbooks.getbooks();
 		Iterator<JSONObject> it=books.iterator();
 		while (it.hasNext()) {
