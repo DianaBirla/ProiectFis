@@ -7,12 +7,12 @@ import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 public class CreareJsonCarti_pentru_Carte_noua{
-
+	private JSONArray list_imprumut= new JSONArray();
 	@SuppressWarnings("unchecked")
-	public void creare(ArrayList imprumut) {
+	public void creare(ArrayList imprumut, String res) {
 		
 		int aux=0;
-		JSONArray list_imprumut= new JSONArray();
+		
 		for(int i=0;i<imprumut.size()/6;i++)
 		{
 				JSONObject obj1= new JSONObject();
@@ -33,7 +33,7 @@ public class CreareJsonCarti_pentru_Carte_noua{
 		}
 		
 			
-		try(FileWriter file =new FileWriter("src/main/resources/Books.json"))
+		try(FileWriter file =new FileWriter(res))
 		{
 			file.write(list_imprumut.toString());
 			file.flush();
@@ -42,6 +42,10 @@ public class CreareJsonCarti_pentru_Carte_noua{
 		{
 			e.printStackTrace();
 		}
+	}
+	public JSONArray lista()
+	{
+		return list_imprumut;
 	}
 
 }
