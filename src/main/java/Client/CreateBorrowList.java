@@ -9,10 +9,9 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class CreateBorrowList {
+	JSONArray list_imprumut= new JSONArray();
 	public void create(String username,List<BookModel> list) {
 		int aux=0;
-		JSONArray list_imprumut= new JSONArray();
-		
 		for(BookModel e:list) {
 			JSONObject obj1= new JSONObject();
 			obj1.put("Titlu",e.getTitlu());
@@ -29,6 +28,9 @@ public class CreateBorrowList {
 		{
 			e.printStackTrace();
 		}
+	}
+	public JSONArray get_list() {
+		return list_imprumut;
 	}
 
 }
