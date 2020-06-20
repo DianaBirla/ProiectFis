@@ -9,12 +9,12 @@ public class PrintFeedbackInfo {
 	
 	ReaderFeedback rf=new ReaderFeedback();
 	public void print(JTable table) {
-		final int numar_fb=rf.get_number();	
+		final int numar_fb=rf.get_number("src/main/resources/CreareJsonImprumut.json");	
 		int index=0;
 		while(index!=numar_fb)
 		{
 			index++;
-			rf.get_feedback(index);
+			rf.readfromfile(index,"src/main/resources/CreareJsonImprumut.json");
 			titlu=rf.get_titlu();
 			if(rf.get_feedback())
 			{
