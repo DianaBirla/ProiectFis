@@ -55,8 +55,7 @@ public class BorrowListInterface extends JFrame {
 			 button.setPreferredSize(new Dimension(100,20));
 			 button.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent arg0) {
-					list.remove(e);
-					WriteBooks.set_list(list);
+					WriteBooks.remove(e);
 					BorrowListInterface intr;
 					try {
 						
