@@ -10,8 +10,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class WriteBooks {
-	private static   List<BookModel> list=new ArrayList<BookModel>();
-	public void write(BookModel e) {
+	private static List<BookModel> list=new ArrayList<BookModel>();
+	public static void write(BookModel e) {
 		list.add(e);
 		
 	}
@@ -20,5 +20,9 @@ public class WriteBooks {
 	}
 	public static void set_list(List<BookModel> list1) {
 		list=list1;
+	}
+	public static void remove(BookModel e) {
+		list.remove(e);
+		
 	}
 }
