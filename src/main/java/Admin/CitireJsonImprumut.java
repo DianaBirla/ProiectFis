@@ -13,6 +13,7 @@ public class CitireJsonImprumut {
 	private String username;
 	private String titlu;
 	private int nr=0;
+	private JSONArray jsonArray=new JSONArray();
 	/**
 	 * Launch the application.
 	 */
@@ -37,13 +38,13 @@ public class CitireJsonImprumut {
 			e.printStackTrace();
 		}
 }		
-	public void get_imprumut(int count)
+	public void get_imprumut(int count, String res)
 	{
 		JSONParser parser = new JSONParser();
 		int aux=0;
-		try (Reader reader = new FileReader("src/main/resources/lista_imprumut.json")) 
+		try (Reader reader = new FileReader(res)) 
 		{
-			JSONArray jsonArray = (JSONArray) parser.parse(reader);
+			jsonArray = (JSONArray) parser.parse(reader);
 			Iterator<JSONObject> it = jsonArray.iterator();
 			while (it.hasNext()&&aux!=count) 
 			{
@@ -74,5 +75,9 @@ public class CitireJsonImprumut {
 	public int get_nr()
 	{
 		return nr;
+	}
+	public JSONArray get_array()
+	{
+		return jsonArray;
 	}
 }

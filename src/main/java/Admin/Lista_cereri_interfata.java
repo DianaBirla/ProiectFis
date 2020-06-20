@@ -122,7 +122,7 @@ public class Lista_cereri_interfata extends JFrame {
 		while(aux!=nr)
 		{
 			aux++;
-			imprumut.get_imprumut(aux);
+			imprumut.get_imprumut(aux,"src/main/resources/lista_imprumut.json");
 			DefaultTableModel model = (DefaultTableModel)table.getModel();
 			model.addRow(new Object [] {imprumut.get_username(),imprumut.get_titlu(),false,false});
 			table.setRowHeight(30);
