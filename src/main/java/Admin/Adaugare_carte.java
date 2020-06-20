@@ -132,7 +132,7 @@ public class Adaugare_carte extends JFrame {
 			}
 			
 			CreareJsonCarti_pentru_Carte_noua carte_noua=new CreareJsonCarti_pentru_Carte_noua();
-			carte_noua.creare(adaug);
+			carte_noua.creare(adaug,"src/main/resources/Books.json");
 			}
 		});
 		btnNewButton.setBounds(504, 462, 125, 38);
