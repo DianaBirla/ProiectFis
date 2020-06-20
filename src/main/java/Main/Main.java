@@ -27,7 +27,7 @@ public class Main {
 				try {
 					JSONFile jf=new JSONFile();
 					WriteUsernamesPasswords up=new WriteUsernamesPasswords();
-					up.WriteUsernamePass();
+					up.WriteUsernamePass("src/main/resources/Usernames_passwords.json");
 					frame = new LoginInterface();
 					frame.setVisible(true);
 				} catch (Exception e) {
