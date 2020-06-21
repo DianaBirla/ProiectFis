@@ -15,14 +15,15 @@ public class WriteBooks {
 		list.add(e);
 		
 	}
-	public static List<BookModel> get_list() {
-		return list;
-	}
+	
 	public static void set_list(List<BookModel> list1) {
 		list=list1;
 	}
 	public static void remove(BookModel e) {
 		list.remove(e);
 		
+	}
+	public static List<BookModel> get_list() {
+		return list;
 	}
 }
