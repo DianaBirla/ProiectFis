@@ -28,7 +28,10 @@ public class Editare_carte extends JFrame {
 	private JTextField textField_10;
 	private JTextField textField_11;
 	private JTextField textField_12;
-
+	private JButton btnNewButton = new JButton();
+	private JButton btnBack = new JButton();
+	private boolean btn=false;
+	private boolean btn1=false;
 	/**
 	 * Launch the application.
 	 */
@@ -69,10 +72,11 @@ public class Editare_carte extends JFrame {
 		lblNewLabel_1_2.setBounds(162, 442, 139, 38);
 		contentPane.add(lblNewLabel_1_2);
 		
-		JButton btnNewButton = new JButton("Editare carte");
+		 btnNewButton = new JButton("Editare carte");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "Carte editata cu succes");
+				btn=true;
 				ArrayList <String> adaug=new ArrayList<String>();
 				String aut1,t1;//pentru cartea existenta
 				String d2,aut2,t2,a2,g2,p2;// cu ce vreau sa inlocuiesc
@@ -149,10 +153,11 @@ public class Editare_carte extends JFrame {
 		btnNewButton.setBounds(477, 619, 125, 38);
 		contentPane.add(btnNewButton);
 		
-		JButton btnBack = new JButton("Back");
+		btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Actualizare actual=new Actualizare();
+				btn1=true;
 				actual.setVisible(true);
 				dispose();
 			}
@@ -229,5 +234,21 @@ public class Editare_carte extends JFrame {
 		lblNewLabel_1.setIcon(new ImageIcon(Editare_carte.class.getResource("/editare.jpg")));
 		lblNewLabel_1.setBounds(0, 0, 1362, 1033);
 		contentPane.add(lblNewLabel_1);
+	}
+	public JButton get_but()
+	{
+		return  btnNewButton;
+	}
+	public boolean get_bol_but()
+	{
+		return btn;
+	}
+	public JButton get_but1()
+	{
+		return   btnBack;
+	}
+	public boolean get_bol_but1()
+	{
+		return btn1;
 	}
 }
