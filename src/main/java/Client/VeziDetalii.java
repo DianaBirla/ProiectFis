@@ -25,6 +25,10 @@ public class VeziDetalii extends JFrame {
 	private JPanel contentPane;
 	private String username;
 	private WriteBooks writer=new WriteBooks();
+	private JButton btnNewButton_1;
+	private JButton btnNewButton;
+	private boolean button1=false;
+	private boolean button2=false;
 
 	public VeziDetalii(final BookModel e,final String username) {
 		this.username=username;
@@ -46,9 +50,10 @@ public class VeziDetalii extends JFrame {
 		lblNewLabel_1.setBounds(234, 144, 283, 33);
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("Back");
+		btnNewButton = new JButton("Back");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				button1=true;
 				Books books=new Books(username);
 				books.setVisible(true);
 				setVisible(false);
@@ -57,10 +62,10 @@ public class VeziDetalii extends JFrame {
 		btnNewButton.setBounds(159, 647, 89, 23);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Imprumuta");
+		btnNewButton_1 = new JButton("Imprumuta");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+				button2=true;
 				writer.write(e);
 				
 			}
@@ -93,4 +98,21 @@ public class VeziDetalii extends JFrame {
 		
 		
 	}
+
+	public JButton getBtnNewButton_1() {
+		return btnNewButton_1;
+	}
+
+	public JButton getBtnNewButton() {
+		return btnNewButton;
+	}
+
+	public boolean isButton1() {
+		return button1;
+	}
+
+	public boolean isButton2() {
+		return button2;
+	}
+
 }
