@@ -21,18 +21,22 @@ public class LoginInterface extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private JPasswordField passwordField;
-	
+	private JButton btnNewButton_1;
+	private boolean but1=false;
+	private JButton btnNewButton;
+	private boolean but2=false;
 	public LoginInterface() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		JButton btnNewButton = new JButton("Login");
+		 btnNewButton = new JButton("Login");
 		btnNewButton.setBounds(41, 196, 100, 23);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				String name=textField.getText();
+				but2=true;
 				String password=passwordField.getText();
 				LoginController logincontrol=new LoginController(name,password);
 				if(logincontrol.get_flag()==1) {
@@ -71,9 +75,10 @@ public class LoginInterface extends JFrame {
 		passwordField.setBounds(186, 134, 143, 20);
 		contentPane.add(passwordField);
 		
-		JButton btnNewButton_1 = new JButton("Close");
+	    btnNewButton_1 = new JButton("Close");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				but1=true;
 				System.exit(0);
 			}
 		});
@@ -85,5 +90,19 @@ public class LoginInterface extends JFrame {
 		lblNewLabel_4.setIcon(new ImageIcon(LoginInterface.class.getResource("/logback.jpg")));
 		lblNewLabel_4.setBounds(0, 0, 434, 261);
 		contentPane.add(lblNewLabel_4);
+		
 	}
+	public JButton getBtnNewButton_1() {
+		return btnNewButton_1;
+	}
+	public boolean isBut1() {
+		return but1;
+	}
+	public JButton getBtnNewButton() {
+		return btnNewButton;
+	}
+	public boolean isBut2() {
+		return but2;
+	}
+	
 }
