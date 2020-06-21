@@ -23,7 +23,10 @@ public class Stergere_carte extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField_2;	
 	private JTextField textField_3;
-
+	private JButton btnNewButton = new JButton();
+	private JButton btnBack = new JButton();
+	private boolean btn=false;
+	private boolean btn1=false;
 	/**
 	 * Launch the application.
 	 */
@@ -67,13 +70,14 @@ public class Stergere_carte extends JFrame {
 		lblNewLabel_1_2.setBounds(411, 385, 139, 38);
 		contentPane.add(lblNewLabel_1_2);
 		
-		JButton btnNewButton = new JButton("Stergere carte");
+		btnNewButton = new JButton("Stergere carte");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(null, "Cartea a fost stearsa cu succes!");
 				ArrayList <String> adaug=new ArrayList<String>();
 				String aut1,t1;//pentru cartea existenta
 				aut1=textField_2.getText();
+				btn=true;
 				t1=textField_3.getText();
 				CitireJsonCarti fisier=new CitireJsonCarti();
 				fisier.get_nr_titluri();
@@ -102,11 +106,12 @@ public class Stergere_carte extends JFrame {
 		btnNewButton.setBounds(376, 477, 125, 38);
 		contentPane.add(btnNewButton);
 		
-		JButton btnBack = new JButton("Back");
+		 btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Actualizare actual=new Actualizare();
 				actual.setVisible(true);
+				btn1=true;
 				dispose();
 			}
 		});
@@ -117,5 +122,21 @@ public class Stergere_carte extends JFrame {
 		lblNewLabel_1.setIcon(new ImageIcon(Editare_carte.class.getResource("/stergere.jpg")));
 		lblNewLabel_1.setBounds(0, 0, 1362, 1033);
 		contentPane.add(lblNewLabel_1);
+	}
+	public JButton get_but()
+	{
+		return  btnNewButton;
+	}
+	public boolean get_bol_but()
+	{
+		return btn;
+	}
+	public JButton get_but1()
+	{
+		return   btnBack;
+	}
+	public boolean get_bol_but1()
+	{
+		return btn1;
 	}
 }

@@ -24,7 +24,10 @@ public class Adaugare_carte extends JFrame {
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
-
+	private JButton btnNewButton = new JButton();
+	private JButton btnBack = new JButton();
+	private boolean btn=false;
+	private boolean btn1=false;
 	/**
 	 * Launch the application.
 	 */
@@ -105,11 +108,12 @@ public class Adaugare_carte extends JFrame {
 		lblNewLabel_1_5.setBounds(570, 395, 139, 38);
 		contentPane.add(lblNewLabel_1_5);
 		
-		JButton btnNewButton = new JButton("Adaugare carte");
+		 btnNewButton = new JButton("Adaugare carte");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ArrayList <String> adaug=new ArrayList<String>();
 				adaug.add(textField_1.getText());
+				btn=true;
 				adaug.add(textField_2.getText());
 				adaug.add(textField_3.getText());
 				adaug.add(textField_4.getText());
@@ -138,10 +142,11 @@ public class Adaugare_carte extends JFrame {
 		btnNewButton.setBounds(504, 462, 125, 38);
 		contentPane.add(btnNewButton);
 		
-		JButton btnBack = new JButton("Back");
+		 btnBack = new JButton("Back");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Actualizare actual=new Actualizare();
+				btn1=true;
 				actual.setVisible(true);
 				dispose();
 			}
@@ -153,5 +158,21 @@ public class Adaugare_carte extends JFrame {
 		lblNewLabel_2.setIcon(new ImageIcon(Adaugare_carte.class.getResource("/carte_noua.jpg")));
 		lblNewLabel_2.setBounds(0, 0, 1362, 1033);
 		contentPane.add(lblNewLabel_2);
+	}
+	public JButton get_but()
+	{
+		return  btnNewButton;
+	}
+	public boolean get_bol_but()
+	{
+		return btn;
+	}
+	public JButton get_but1()
+	{
+		return   btnBack;
+	}
+	public boolean get_bol_but1()
+	{
+		return btn1;
 	}
 }
