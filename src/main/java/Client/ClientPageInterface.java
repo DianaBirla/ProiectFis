@@ -22,6 +22,13 @@ public class ClientPageInterface extends JFrame {
 	private JPanel contentPane;
 	ClientPageMenu client=new ClientPageMenu();
 	private String username;
+	private JButton btnNewButton_2;
+	private boolean button1=false;
+	private JButton btnNewButton;
+	private boolean button2=false;
+	private JButton btnNewButton_1;
+	private boolean button3=false;
+	
 	public ClientPageInterface(final String username) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setSize(1650,1080);
@@ -31,12 +38,13 @@ public class ClientPageInterface extends JFrame {
 		contentPane.setLayout(null);
 		this.username=username;
 		
-		JButton btnNewButton = new JButton("          Carti");
+		btnNewButton = new JButton("          Carti");
 		btnNewButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {
 				client.books(username);
 				setVisible(false);
+				button2=true;
 			}
 		}
 		);
@@ -47,10 +55,11 @@ public class ClientPageInterface extends JFrame {
 		btnNewButton.setBounds(78, 200, 212, 58);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("  Lista imprumut");
+		btnNewButton_1 = new JButton("  Lista imprumut");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				try {
+					button3=true;
 					client.BorrowList(username);
 				}
 				catch(NoBooksAdded e1) {
@@ -69,9 +78,10 @@ public class ClientPageInterface extends JFrame {
 		btnNewButton_1.setBounds(78, 369, 212, 58);
 		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton_2 = new JButton("         Feedback");
+		btnNewButton_2 = new JButton("         Feedback");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				button1=true;
 				client.feedback(username);
 				setVisible(false);
 			}
@@ -93,4 +103,24 @@ public class ClientPageInterface extends JFrame {
 		lblNewLabel_1.setBounds(0, 0, 1650, 1080);
 		contentPane.add(lblNewLabel_1);
 	}
+	public JButton get_button1() {
+		return btnNewButton_2;
+	}
+	public boolean get_bool_button1() {
+		return button1;
+	}
+	public JButton getBtnNewButton_1() {
+		return btnNewButton_1;
+	}
+	public boolean isButton3() {
+		return button3;
+	}
+	public JButton getBtnNewButton() {
+		return btnNewButton;
+	}
+	public boolean isButton2() {
+		return button2;
+	}
 }
+	
+	
