@@ -19,7 +19,10 @@ import javax.swing.table.DefaultTableModel;
 
 @SuppressWarnings("serial")
 public class Lista_carti_interfata extends JFrame {
-
+	private JButton btnNewButton = new JButton();
+	private boolean btn=false;
+	private JButton btnNewButton_1 = new JButton();
+	private boolean btn1=false;
 	private JPanel contentPane;
 	private JTable table;
 
@@ -82,10 +85,11 @@ public class Lista_carti_interfata extends JFrame {
 		car.get_titlu(1);
 		car.get_titlu(2);
 		
-		JButton btnNewButton = new JButton("Back meniu");
+		btnNewButton = new JButton("Back meniu");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Meniu_Admin frame = new Meniu_Admin();
+				btn=true;
 				frame.setVisible(true);
 				dispose();
 			}
@@ -93,10 +97,11 @@ public class Lista_carti_interfata extends JFrame {
 		btnNewButton.setBounds(1004, 518, 138, 25);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Vezi detalii carte");
+		btnNewButton_1 = new JButton("Vezi detalii carte");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				int aux1=0,count=0,poz = 0;
+				btn1=true;
 				while(aux1!=nr)
 				{
 					DefaultTableModel model = (DefaultTableModel)table.getModel();
@@ -127,6 +132,22 @@ public class Lista_carti_interfata extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon(Lista_carti_interfata.class.getResource("/back_lista_carti.jpg")));
 		lblNewLabel.setBounds(-2, -223, 1362, 1033);
 		contentPane.add(lblNewLabel);
+	}
+	public JButton get_but()
+	{
+		return btnNewButton;
+	}
+	public boolean get_bol_but()
+	{
+		return btn;
+	}
+	public JButton get_but1()
+	{
+		return btnNewButton_1;
+	}
+	public boolean get_bol_but1()
+	{
+		return btn1;
 	}
 	}
 
